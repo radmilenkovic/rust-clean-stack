@@ -1,0 +1,17 @@
+[package]
+name = "clean-arch-core"
+description = "Core traits and abstractions for Clean Architecture: CQRS, Repository patterns, and Result types"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+async-trait = { workspace = true }
+thiserror = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }

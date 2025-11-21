@@ -1,0 +1,49 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/clean-dto",
+    "crates/clean-dto-macros",
+    "crates/clean-arch-core",
+    "crates/tracing-serilog",
+    "crates/axum-scheduler", "templates/web-api",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/radmilenkovic/rust-clean-stack"
+
+[workspace.dependencies]
+# Internal crates
+clean-dto = { path = "crates/clean-dto", version = "0.1.0" }
+clean-dto-macros = { path = "crates/clean-dto-macros", version = "0.1.0" }
+clean-arch-core = { path = "crates/clean-arch-core", version = "0.1.0" }
+tracing-serilog = { path = "crates/tracing-serilog", version = "0.1.0" }
+axum-scheduler = { path = "crates/axum-scheduler", version = "0.1.0" }
+
+# Async runtime
+tokio = { version = "1.43", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+
+# Error handling
+thiserror = { version = "2.0" }
+
+# Tracing
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3", features = ["json", "env-filter"] }
+
+# Utilities
+uuid = { version = "1.11", features = ["v4", "v7", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+async-trait = { version = "0.1" }
+
+# Proc-macro helpers
+syn = { version = "2.0", features = ["full", "extra-traits"] }
+quote = { version = "1.0" }
+proc-macro2 = { version = "1.0" }
+darling = { version = "0.21.3" }
