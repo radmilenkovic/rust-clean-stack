@@ -5,7 +5,7 @@ members = [
     "crates/clean-dto-macros",
     "crates/clean-arch-core",
     "crates/tracing-serilog",
-    "crates/axum-scheduler", "templates/web-api",
+    "crates/axum-scheduler"
 ]
 
 [workspace.package]
